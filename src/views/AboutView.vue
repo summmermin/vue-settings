@@ -1,55 +1,54 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const pricingContents = [
+  {
+    plan: "Personal",
+    price: `$2.99<small>/mo</small>`,
+    price_dollar: "$5.99",
+    discount: "Save 50%",
+    list_1: "30 GB SSD",
+    list_2: "1 Website",
+    list_3: "Domain Name",
+  },
+  {
+    plan: "Business+",
+    price: `$8.99<small>/mo</small>`,
+    price_dollar: "$17.99",
+    discount: "Save 50%",
+    list_1: "60 GB SSD",
+    list_2: "Unlimited Websites",
+    list_3: "AutoBackup",
+  },
+  {
+    plan: "Business",
+    price: `$4.99<small>/mo</small>`,
+    price_dollar: "$9.99",
+    discount: "Save 50%",
+    list_1: "90 GB SSD",
+    list_2: "Unlimited Websites",
+    list_3: "Domain Name",
+  },
+];
+</script>
 
 <template>
   <div class="pricing-table">
     <h2>Shared Hosting Plans</h2>
-    <div class="price-item">
+    <div class="price-item" v-for="(item, idx) in pricingContents" :key="idx">
       <ul>
-        <li class="plan">Personal</li>
+        <li class="plan" :class="idx === 1 ? 'plus' : ''">{{ item.plan }}</li>
         <li class="price">
-          <p>$2.99<small>/mo</small></p>
-          <span class="price-doller">$5.99</span>
-          <span class="discount">Save 50%</span>
+          <p>{{ item.price }}</p>
+          <span class="price-dollar">{{ item.price_dollar }}</span>
+          <span class="discount" :class="idx === 1 ? 'plus' : ''">{{
+            item.discount
+          }}</span>
         </li>
         <li class="btn">
           <button>Get Started</button>
         </li>
-        <li class="list">30 GB SSD</li>
-        <li class="list">1 Website</li>
-        <li class="list">Domaine Name</li>
-      </ul>
-    </div>
-    <div class="price-item">
-      <ul>
-        <li class="plan plus">Business+</li>
-        <li class="price">
-          <p>$8.99<small>/mo</small></p>
-          <span class="price-doller">$17.99</span>
-          <span class="discount plus">Save 50%</span>
-        </li>
-        <li class="btn">
-          <button class="plus">Get Started</button>
-        </li>
-        <li class="list">60 GB SSD</li>
-        <li class="list">Unlimited Websites</li>
-        <li class="list">Domaine Name</li>
-        <li class="list">AutoBackup</li>
-      </ul>
-    </div>
-    <div class="price-item">
-      <ul>
-        <li class="plan">Business</li>
-        <li class="price">
-          <p>$4.99<small>/mo</small></p>
-          <span class="price-doller">$9.99</span>
-          <span class="discount">Save 50%</span>
-        </li>
-        <li class="btn">
-          <button>Get Started</button>
-        </li>
-        <li class="list">90 GB SSD</li>
-        <li class="list">Unlimited Websites</li>
-        <li class="list">Domaine Name</li>
+        <li class="list">{{ item.list_1 }}</li>
+        <li class="list">{{ item.list_2 }}</li>
+        <li class="list">{{ item.list_3 }}</li>
       </ul>
     </div>
   </div>
@@ -132,7 +131,7 @@
   display: block;
 }
 
-.pricing-table .price-item ul li.price .price-doller {
+.pricing-table .price-item ul li.price .price-dollar {
   color: #6d6e70;
   margin-top: 7%;
   font-weight: bold;
