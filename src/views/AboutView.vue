@@ -2,7 +2,7 @@
 const pricingContents = [
   {
     plan: "Personal",
-    price: `$2.99<small>/mo</small>`,
+    price: `$2.99`,
     price_dollar: "$5.99",
     discount: "Save 50%",
     list_1: "30 GB SSD",
@@ -11,7 +11,7 @@ const pricingContents = [
   },
   {
     plan: "Business+",
-    price: `$8.99<small>/mo</small>`,
+    price: `$8.99`,
     price_dollar: "$17.99",
     discount: "Save 50%",
     list_1: "60 GB SSD",
@@ -20,7 +20,7 @@ const pricingContents = [
   },
   {
     plan: "Business",
-    price: `$4.99<small>/mo</small>`,
+    price: `$4.99`,
     price_dollar: "$9.99",
     discount: "Save 50%",
     list_1: "90 GB SSD",
@@ -44,7 +44,7 @@ const pricingContents = [
           }}</span>
         </li>
         <li class="btn">
-          <button>Get Started</button>
+          <button :class="idx === 1 ? 'plus' : ''">Get Started</button>
         </li>
         <li class="list">{{ item.list_1 }}</li>
         <li class="list">{{ item.list_2 }}</li>
