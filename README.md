@@ -1,9 +1,9 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite 기본 환경 설정 템플릿입니다.
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+이 템플릿은 Vue 3 + TypeScript + Vite 프로젝트를 보다 빠르고 수월하게 환경 설정을 할 수 있도록 기본 셋팅 템플릿입니다. 
+store 는 pinua, api 설정은 axios 를 사용했습니다. css의 전처리 sass를 사용해서 스타일 구현을 수월하게 하였고,
+alias 를 사용해서 파일의 절대경로 설정을 편하게 이용할 수 잇습니다.
+기본적으로 로그인, 테이블, 배너 등의 기본적인 페이지와 스토어 사용 샘플 등의 사용 샘플 등을 구성합니다.(예정)
 
-## Recommended Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
-
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+## 프로젝트 구성
